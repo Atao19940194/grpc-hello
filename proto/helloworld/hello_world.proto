@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="./;helloworld";
+option go_package = "./;helloworld";
 
 package helloworld;
 
@@ -9,20 +9,16 @@ import "google/api/annotations.proto";
 // The greeting service definition
 service Greeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {
+  rpc SayHello(HelloRequest) returns (HelloReply) {
     option (google.api.http) = {
-      post: "/v1/sayHello"
-      body: "*"
+      post : "/v1/sayHello"
+      body : "*"
     };
   }
 }
 
 // The request message containing the user's name
-message HelloRequest {
-  string name_test = 1;
-}
+message HelloRequest { string name_test = 1; }
 
 // The response message containing the greetings
-message HelloReply {
-  string test_message = 1;
-}
+message HelloReply { string test_message = 1; }
